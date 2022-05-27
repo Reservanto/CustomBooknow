@@ -7,7 +7,7 @@
 ### Reservanto.ApiClient
 
 - Ukázkové rozhraní pro komunikaci s Reservanto API
-- Veškerá komunikace probíhá pomocí třídy `ReservantoApi` (viz ReservantoApi.cs), který má na sobě již připravené ukázkové metody pro komunikaci, včetně metod pro získání a obnovu **STT** (Short Time Token).
+- Veškerá komunikace probíhá pomocí třídy `ReservantoApi` (viz ReservantoApi.cs), která má připravené ukázkové metody pro komunikaci, včetně metod pro získání a obnovu **STT** (Short Time Token).
     - Forma pojmenování metod je ekvivalentní k metodám viditelným v dokumentaci API, metody jsou definovány vždy formou `{název controleru}_{název akce}`
 
 ### Reservanto.CustomBooknow
