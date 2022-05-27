@@ -1,0 +1,90 @@
+﻿/* Styl pro vertikální kalendář (rezervace v řádcích) */
+#calendar-horizontal {
+  margin-top: 5px;
+  display: flex;
+  max-width: fit-content;
+  margin: 1em auto;
+}
+#calendar-horizontal table#calendar-header tr th {
+  font-weight: 300;
+  padding: 5px 15px;
+  width: 51px;
+  font-size: 13px;
+  line-height: 13px;
+  border: 1px solid #e6ecec;
+  border-bottom: 0;
+  height: 30px;
+  max-height: 30px;
+}
+#calendar-horizontal table#calendar-header tr:last-child th {
+  border-bottom: 1px solid #e6ecec;
+}
+#calendar-horizontal table#calendar-header tr th.empty {
+  height: 13px;
+  max-height: 13px;
+  background-color: #e6ecec;
+}
+#calendar-horizontal table#calendar-table {
+  margin: 0;
+}
+#calendar-horizontal table#calendar-table tr td {
+  min-width: 80px;
+  height: 39px;
+  max-height: 39px;
+  padding: 0;
+  text-align: center;
+  border: 1px solid #e6ecec;
+}
+#calendar-horizontal table#calendar-table tr td.empty {
+  background-image: url("/Images/bg-bookeditem.png?v=2");
+  background-repeat: repeat;
+}
+#calendar-horizontal table#calendar-table tr td.time {
+  min-height: 0;
+  height: 13px;
+  max-height: 13px;
+  padding: 5px;
+  font-size: 11px;
+  line-height: 12px;
+  background-image: none;
+}
+#calendar-show {
+  overflow: hidden;
+  overflow-x: auto;
+}
+#calendar-show .appointment {
+  font-size: 12px;
+  line-height: 13px;
+  background-color: white;
+  height: 39px;
+  cursor: pointer;
+}
+#calendar-show .appointment .content {
+  padding-left: 3px;
+  border-left: 3px solid #00b6b4;
+  border-right: 1px solid #e6ecec;
+  height: 100%;
+}
+#calendar-show .appointment .content .service {
+  font-weight: bold;
+}
+#calendar-show .appointment .content .source,
+#calendar-show .appointment .content .service {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: left;
+}
+#calendar-show .appointment .content .availability {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: left;
+  display: block;
+}
+#calendar-show .appointment:hover {
+  background-color: #f1f7f7;
+}
+#calendar-show .appointment.selected {
+  background-color: #e6ecec;
+}

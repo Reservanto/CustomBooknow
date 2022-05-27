@@ -1,0 +1,69 @@
+﻿@model BookingViewModel
+@using Reservanto.CustomBooknow.Localization
+@using Reservanto.CustomBooknow.Code
+
+@Html.DisplayFor(m => m)
+
+<section id="booking-details">
+	<div class="step">
+		<h2>@Resources.BookingDetails</h2>
+	</div>
+	<div id="selector">
+		<div class="customer-column">
+			<div class="row">
+				<label class="fakeinput" for="FirstName">@Resources.FirstName</label>
+				<div class="input">
+					<input onchange="CustomBooking.Core.setFormValue('CustomerFirstName', $(this).val());"
+						   type="text"
+						   value="@Model.CustomerFirstName"
+						   id="FirstName" />
+				</div>
+			</div>
+			<div class="row">
+				<label class="fakeinput" for="LastName">@Resources.Lastname</label>
+				<div class="input">
+					<input onchange="CustomBooking.Core.setFormValue('CustomerLastName', $(this).val());"
+						   type="text"
+						   value="@Model.CustomerLastName"
+						   id="LastName" />
+				</div>
+			</div>
+			<div class="row">
+				<label class="fakeinput" for="Email">@Resources.Email</label>
+				<div class="input">
+					<input onchange="CustomBooking.Core.setFormValue('CustomerEmail', $(this).val());"
+						   type="text"
+						   value="@Model.CustomerEmail"
+						   id="Email" />
+				</div>
+			</div>
+			<div class="row">
+				<label class="fakeinput" for="Phone">@Resources.Phone</label>
+				<div class="input">
+					<input onchange="CustomBooking.Core.setFormValue('CustomerPhone', $(this).val());"
+						   type="text"
+						   value="@Model.CustomerPhone"
+						   id="Phone" />
+				</div>
+			</div>
+			<div class="row textarea">
+				<label class="fakeinput" for="CustomerNote">@Resources.Note</label>
+				<div class="input">
+					<textarea onchange="CustomBooking.Core.setFormValue('CustomerNote', $(this).val());"
+							  type="text"
+							  value="@Model.CustomerNote"
+							  id="CustomerNote"></textarea>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<script type="text/javascript">
+	CustomBooking.Config.nextPageUse = @Json.Serialize(Model.HasNextPage);
+	CustomBooking.Config.prevPageUse = @Json.Serialize(Model.HasPrevPage);
+	CustomBooking.Config.nextPage = "@Model.NextPage.GetPageUrl(Model.SegmentType, Url)";
+	CustomBooking.Config.prevPage = "@Model.PrevPage.GetPageUrl(Model.SegmentType, Url)";
+	CustomBooking.Config.nextPageText = "@Resources.Finish";
+	CustomBooking.Config.prevPageText = "@Resources.PrevPage";
+</script>

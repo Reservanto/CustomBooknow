@@ -1,0 +1,44 @@
+﻿@using Reservanto.CustomBooknow.Localization
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>@Resources.Title</title>
+	@*<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />*@
+	<link rel="stylesheet" href="~/css/layout.css" />
+	<link rel="stylesheet" href="~/css/site.css" />
+
+	@* TODO: Odebrat, jenom mám tady protože mi blbne cache na css *@
+	<link rel="stylesheet" href="~/css/vcalendar.css" />
+	<link rel="stylesheet" href="~/css/hcalendar.css" />
+
+	<script src="~/lib/jquery/dist/jquery.min.js"></script>
+	<script src="~/lib/jquery-form/dist/jquery.form.min.js"></script>
+	<script type="text/javascript" src="~/js/custom-booking.js"></script>
+</head>
+<body>
+	<div id="header">
+		<h1 id="header-text">@Resources.Title</h1>
+		<a href="#" onclick="return false;" class="logo"></a>
+	</div>
+	<main id="content" role="main">
+		<div id="loader" class="loading center"></div>
+		<div id="inner">
+			@RenderBody()
+		</div>
+	</main>
+	<div id="footer">
+		<div id="footer-menu">
+			@* I první content se načítá pomocí Ajaxu, tak zatím skryji. *@
+			<button id="nextPage" style="display: none"></button>
+			<button id="prevPage" style="display: none"></button>
+		</div>
+	</div>
+
+	<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+	<script src="~/js/site.js" asp-append-version="true"></script>
+	@await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

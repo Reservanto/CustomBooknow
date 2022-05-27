@@ -1,0 +1,37 @@
+﻿@model BookingViewModel
+@using Reservanto.CustomBooknow.Localization
+
+@Html.DisplayFor(m => m)
+
+<div class="step">
+	<h2>@Resources.BookingFinished</h2>
+</div>
+<div id="selector">
+	<div class="finish-column">
+		<h3>@Model.Summary.BookingServiceName</h3>
+		<div id="header-suffix">
+			<h4>@Model.Summary.BookingResourceName</h4>
+			<p class="time">@string.Format(Resources.Minutes, Model.Summary.Duration.TotalMinutes)</p>
+		</div>
+		<div class="info">
+			<label>@Resources.BookingTime.ToUpper():</label>
+			@Model.Summary.StartsAt.ToString("dddd d.M. v HH:mm")
+		</div>
+		<div class="info">
+			<label>@Resources.Address.ToUpper():</label>
+			@Model.Summary.City, @Model.Summary.Street, @Model.Summary.ZipCode
+		</div>
+		@if (!Model.Summary.IsPaid && Model.Summary.Price > 0)
+		{
+			<div class="info">
+				<label>@Resources.ToBePaid.ToUpper():</label>
+				@Model.Summary.Price.ToString(Resources.CurrencyFormat)
+			</div>
+		}
+	</div>
+</div>
+
+<script type="text/javascript">
+	CustomBooking.Config.nextPageUse = false;
+	CustomBooking.Config.prevPageUse = false;
+</script>

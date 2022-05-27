@@ -1,0 +1,130 @@
+﻿* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+body {
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 300;
+  color: #1a1a1a;
+  background-color: white;
+}
+#content #selector {
+  overflow: auto;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  top: 61px;
+}
+.clear-fix::after {
+  content: ".";
+  clear: both;
+  display: block;
+  height: 0;
+  visibility: hidden;
+}
+/* region - header */
+#header {
+  height: 70px;
+  background-color: #06bdc4;
+}
+#header h1 {
+  color: #fff;
+  font-size: 22px;
+  padding: 22px;
+  font-weight: 300;
+  text-transform: uppercase;
+  float: left;
+}
+#header .logo {
+  display: block;
+  float: right;
+  height: 64px;
+  width: 159px;
+  margin: 3px;
+  background-image: url("/images/logo.png");
+  background-position: center;
+  background-repeat: no-repeat;
+}
+/* endregion */
+/* region - loader */
+.loading {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  background-image: url("/images/loader.gif");
+  background-repeat: no-repeat;
+  margin: 3px 4px;
+}
+.loading.center {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-top: -12px;
+  margin-left: -12px;
+}
+/* endregion */
+/* region - main */
+main {
+  overflow: auto;
+  position: absolute;
+  top: 70px;
+  bottom: 62px;
+  width: 100%;
+}
+/* region - footer */
+#footer {
+  margin-top: 24px;
+  background-color: white;
+  border-top: 1px solid #e6ecec;
+  height: 62px;
+  width: 100%;
+  left: 0;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+#footer #footer-logo {
+  background-image: url("/images/logo-footer.png");
+  float: left;
+  height: 30px;
+  margin: 15px;
+  width: 125px;
+}
+#footer #footer-menu {
+  float: right;
+  height: 61px;
+}
+#footer #footer-menu #prevPage,
+#footer #footer-menu .button {
+  background-color: white;
+  background-repeat: no-repeat;
+  border: 1px solid #e6ecec;
+  height: 37px;
+  color: #1c1c1c;
+  padding: 7px;
+  border-radius: 4px;
+}
+#footer #footer-menu #nextPage {
+  background: #09c1cd url("/images/next-bg-arrow.png") right center no-repeat;
+  height: 37px;
+  color: #fff;
+  padding: 7px 30px 7px 10px;
+  margin-right: 15px;
+  border-radius: 4px;
+}
+#footer #footer-menu button {
+  height: 37px;
+  margin: 12px 5px 12px 5px;
+  float: right;
+  cursor: pointer;
+  background-color: white;
+  border: none;
+}
+#footer #footer-menu #nextPage[disabled],
+#footer #footer-menu nextPage:disabled {
+  background-color: silver;
+  color: lightgray;
+}
+/* endregion */

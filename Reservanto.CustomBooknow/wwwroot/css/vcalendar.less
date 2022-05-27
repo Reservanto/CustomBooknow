@@ -1,0 +1,116 @@
+﻿/* Styl pro vertikální kalendář (rezervace ve sloupcích) */
+
+@calendarBorder: #ccc;
+@calendarSelected: rgb(77, 189, 195);
+@calendarSelectedLeft: darken(@calendarSelected, 20%);
+@calendarSelectedText: white;
+@calendarHover: rgba(77, 189, 195, 0.35);
+@calendarHoverInvalid: #f7f1f1;
+@cellWidth: 86px;
+@cellHeight: 36px;
+@fontSize: 13px;
+
+.calendar-main {
+	text-align: center;
+}
+
+.fill #vcalendar {
+	height: 100%;
+}
+
+#vcalendar {
+	display: inline-block;
+
+	table {
+		border-spacing: 0;
+
+		tbody {
+			display: block;
+			overflow: auto;
+			height: 300px;
+			width: 100%;
+		}
+
+		thead {
+			.calendar-normal-header-row {
+				display: block;
+			}
+
+			.calendar-mobile-header-row {
+				display: none;
+			}
+		}
+
+		td, th {
+			// toto je společné, abych udržel šířku hlavičky a těla tejnou
+			width: @cellWidth;
+			border-style: solid;
+			border-width: 1px;
+			border-top: 0;
+			border-color: transparent;
+		}
+
+		th {
+			border-bottom: 0;
+			padding: 7px 0;
+			font-weight: 500;
+			font-size: (@fontSize + 3px);
+
+			&:first-line {
+				// velké písmeno a slabší text pro názvy dní na prvním řádku headerů v kalendáři
+				font-weight: 300;
+				text-transform: capitalize;
+			}
+		}
+
+		tr:first-child td {
+			border-top: 1px solid @calendarBorder;
+		}
+
+		td {
+			min-height: @cellHeight;
+			height: @cellHeight;
+			max-height: @cellHeight;
+			border-color: @calendarBorder;
+			position: relative;
+			font-size: @fontSize;
+			text-align: left;
+			overflow: hidden;
+
+			&.clickable:hover {
+				background-color: @calendarHover;
+				border-color: @calendarHover;
+				cursor: pointer;
+			}
+
+			&.selected {
+				border-color: @calendarSelected;
+				background-color: @calendarSelected;
+				color: @calendarSelectedText;
+			}
+
+			&.booked {
+				background-color: #E8F2F5;
+				border-top: none;
+				border-bottom: none;
+				background-image: url("/Images/bg-bookeditem.png");
+				background-repeat: repeat;
+				text-align: center;
+				vertical-align: middle;
+				color: gray;
+				cursor: default;
+			}
+
+			&:not(:first-child) {
+				border-left: none;
+			}
+
+			.time {
+				display: block;
+				position: absolute;
+				top: 5px;
+				left: 5px;
+			}
+		}
+	}
+}

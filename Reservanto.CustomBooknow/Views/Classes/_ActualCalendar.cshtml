@@ -1,0 +1,70 @@
+﻿@model CalendarViewModel
+
+@{
+	int bound0 = Model.Cells.GetUpperBound(0);
+	int bound1 = Model.Cells.GetUpperBound(1);
+	int rows = bound1 + 1;
+}
+
+<div id="calendar-horizontal" class="clear-fix">
+	<table id="calendar-header" cellspacing="0">
+		<tr><th class="empty"></th></tr>
+		@for (int i = 0; i <= bound0; i++)
+		{
+			<tr>
+				<th>@Model.Monday.AddDays(i).ToString("dddd dd.MM.")</th>
+			</tr>
+		}
+	</table>
+	<div id="calendar-show">
+		<table id="calendar-table" cellspacing="0">
+			<tr>
+				@for (int d = 0; d <= bound1; d++)
+				{
+					<td class="time">
+						@Model.Cells[0, d].Time.ToShortTimeString() - @Model.Cells[0, d].Time.AddMinutes(Model.SlotSize).ToShortTimeString()
+					</td>
+				}
+			</tr>
+			@for (int i = 0; i <= bound0; i++)
+			{
+				<tr>
+					@for (int j = 0; j <= bound1; j++)
+					{
+						var appointment = Model.AvailableAppointments.FirstOrDefault(a => a.StartDate == Model.Cells[i, j].Time);
+
+						if (appointment != null)
+						{
+							<td class="appointment clickable" data-id="@appointment.Id">
+								<div class="content">
+									<div class="service">
+										@appointment.BookingServiceName
+									</div>
+									<div class="source">@appointment.BookingResourceName</div>
+									<span class="availability">@appointment.FormattedAvailability</span>
+								</div>
+							</td>
+						}
+						else
+						{
+							<td class="empty"></td>
+						}
+					}
+				</tr>
+			}
+		</table>
+	</div>
+</div>
+
+<script type="text/javascript">
+	$(".appointment[data-id='" + CustomBooking.Core.getFormValue("AppointmentId") + "']").addClass("selected");
+
+	$(".clickable").click(function () {
+		$this = $(this);
+
+		$(".selected").removeClass("selected");
+		$this.addClass("selected");
+
+		CustomBooking.Core.setFormValue("AppointmentId", $this.attr("data-id"));
+	});
+</script>

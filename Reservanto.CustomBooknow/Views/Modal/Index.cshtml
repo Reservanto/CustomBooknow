@@ -1,0 +1,11 @@
+﻿@model BookingViewModel
+@using Reservanto.CustomBooknow.Code
+
+@Html.DisplayFor(m => m)
+
+<script type="text/javascript">
+	CustomBooking.Config.nextPageUse = false;
+	CustomBooking.Config.prevPageUse = false;
+
+	CustomBooking.Core.ready(function () { CustomBooking.Core.goToUrl("@Model.CurrentPage.GetPageUrl(Model.SegmentType, Url)") });
+</script>

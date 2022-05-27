@@ -1,0 +1,32 @@
+﻿@model BookingViewModel
+@using Reservanto.CustomBooknow.Localization
+
+<div class="services">
+	@foreach (var service in Model.BookingServices)
+	{
+		<div class="service @(Model.BookingServiceId == service.Id ? "selected" : "")" onclick="setService(@service.Id, this, @service.Duration)">
+			<h3>@service.Name</h3>
+			<div class="right">
+				<div class="time">@service.Duration min</div>
+				<div class="price">@service.PriceWithVat.ToString(Resources.CurrencyFormat)</div>
+			</div>
+			<p>
+				@service.Description
+			</p>
+		</div>
+	}
+</div>
+
+<script type="text/javascript">
+	function setService(id, elem, length) {
+		@* Zvýrazním výběr. *@
+		if (elem != null) {
+			$(".service").removeClass("selected");
+			$(elem).addClass("selected");
+		}
+
+		@* Nastavím do formuláře. *@
+		CustomBooking.Core.setFormValue("BookingServiceId", id);
+		CustomBooking.Core.setFormValue("BookingServiceLength", length);
+	}
+</script>

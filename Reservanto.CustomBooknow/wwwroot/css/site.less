@@ -1,0 +1,331 @@
+﻿/* region - step */
+
+#content #inner {
+	.step {
+		height: 36px;
+		border-bottom: 1px solid #e6ecec;
+		padding: 12px 15px 12px 20px;
+
+		h2 {
+			float: left;
+			font-weight: 300;
+			font-size: 22px;
+			padding-top: 4px;
+		}
+	}
+}
+
+/* endregion */
+
+/* region - right menu */
+
+.without-left-menu .right-menu {
+	left: 0;
+}
+
+.right-menu {
+	position: absolute;
+	left: 186px;
+	bottom: 0;
+	right: 0;
+	top: 0;
+	overflow: auto;
+
+	h3 {
+		font-weight: 500;
+		font-size: 16px;
+		float: left;
+	}
+
+	.segment, .location {
+		min-height: 21px;
+	}
+
+	.service {
+		padding-left: 45px;
+
+		p {
+			padding-top: 30px;
+			font-weight: 400;
+			font-size: 13px;
+			padding-left: 30px;
+			padding-right: 70px;
+		}
+
+		.right {
+			font-weight: 400;
+			font-size: 16px;
+			float: right;
+			text-align: right;
+			line-height: 20px;
+		}
+
+		div.time:before {
+			content: url("/Images/u-time-icon.png");
+			background-repeat: no-repeat;
+			width: 14px;
+			height: 14px;
+			margin-right: 5px;
+			margin-top: 2px;
+		}
+	}
+
+	.item, .service {
+		cursor: pointer;
+		padding: 15px;
+		border-bottom: 1px solid #e6ecec;
+
+		h3:before {
+			content: url("/Images/u-check-icon.png");
+			background-repeat: no-repeat;
+			width: 20px;
+			height: 20px;
+			margin-right: 10px;
+			float: left;
+		}
+	}
+
+	.item, .service, .segment {
+		&:hover {
+			background-color: #f1f7f7;
+		}
+
+		&.selected {
+			background-color: #e6ecec;
+
+			h3:before {
+				content: url("/images/s-check-icon.png");
+			}
+		}
+	}
+}
+
+/* endregion */
+
+
+/* region - left menu */
+
+.left-menu {
+	position: absolute;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	width: 185px;
+	border-right: 1px solid #e6ecec;
+	overflow: auto;
+	font-weight: 400;
+	z-index: 1;
+
+	ul {
+		list-style: none;
+
+		li.location {
+			text-transform: uppercase;
+			padding: 13px 0 13px 17px;
+			font-weight: bold;
+			font-size: 13px;
+			color: #1a1a1a;
+
+			&:before {
+				content: url("/Images/location-icon.png");
+				background-repeat: no-repeat;
+				float: left;
+				width: 8px;
+				height: 12px;
+				margin-right: 5px;
+			}
+		}
+
+		li ul li.resource {
+			padding: 10px 0 10px 30px;
+			color: black;
+			cursor: pointer;
+			position: relative;
+
+			&:hover {
+				background-color: #f1f7f7;
+			}
+
+			&.selected {
+				background-color: #e6ecec;
+			}
+		}
+	}
+}
+
+/* region - inputy */
+
+input[type=text], input[type=password], input[type=number], textarea, select {
+	border: 1px solid #e2e2e2;
+	font-family: 'Ubuntu', sans-serif;
+	padding: 5px;
+	vertical-align: middle;
+}
+
+input[type=text], input[type=password], input[type=number] {
+	height: 20px;
+	max-width: 250px;
+	width: 100%;
+}
+
+textarea {
+	max-width: 250px;
+	height: 70px;
+	width: 100%;
+}
+
+.input {
+	display: inline-block;
+	font-size: 14px;
+	width: calc(100% - 160px);
+	min-width: 200px;
+}
+
+.fakeinput {
+	display: inline-block;
+	font-size: 14px;
+	width: 140px;
+}
+
+/* endreagion */
+
+/*region - kalendrář */
+
+.calendar-change {
+	margin-left: 10px;
+	float: left;
+
+	button {
+		background-image: url("/Images/calendar-btn.png");
+		background-repeat: no-repeat;
+		background-color: transparent;
+		width: 107px;
+		height: 37px;
+		color: black;
+		border: 0;
+		padding: 5px 10px 5px 30px !important;
+	}
+
+	.week-picker {
+		position: absolute;
+		top: 50px;
+		z-index: 10;
+		font-size: 10px;
+		box-shadow: 0 3px 5px rgba(50, 50, 50, 0.5);
+	}
+}
+
+#calendar-left, #calendar-right {
+	width: auto;
+	position: relative;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	margin-top: 5px;
+	float: left;
+	margin-left: 10px;
+}
+
+#calendar-left .load {
+	background-image: url("/Images/arrow-left.png");
+}
+
+#calendar-right .load {
+	background-image: url("/Images/arrow-right.png");
+}
+
+.load {
+	position: relative;
+	top: 0;
+	left: 0;
+	margin: 0;
+	width: 17px;
+	height: 28px;
+	background-repeat: no-repeat;
+	cursor: pointer;
+}
+
+/* endregion */
+
+
+/* region - validační chyby */
+
+#errorMSG {
+	height: 60px;
+	background-color: #e14e31;
+	color: white;
+	font-size: 14px;
+	font-weight: 400;
+	display: table;
+	width: 100%;
+	position: absolute;
+	z-index: 5;
+
+	p {
+		display: table-cell;
+		vertical-align: middle;
+		text-align: center;
+	}
+}
+
+/* endregion */
+
+/* region - zadávání kontaktních údajů */
+
+.customer-column {
+	padding: 30px;
+
+	.row {
+		padding: 8px 0;
+
+		&.textarea {
+			padding-top: 16px;
+		}
+	}
+}
+
+/* endregion */
+
+/* region - finální stránka */
+
+.finish-column {
+	padding: 30px;
+
+	h3 {
+		padding-bottom: 5px;
+	}
+
+	#header-suffix {
+		padding-bottom: 30px;
+
+		h4 {
+			padding-bottom: 10px;
+			font-size: 14px;
+		}
+
+		.time {
+			font-weight: 400;
+			color: #aeaeae;
+
+			&:before {
+				content: url("/Images/u-time-icon.png");
+				background-repeat: no-repeat;
+				width: 14px;
+				height: 14px;
+				margin-right: 5px;
+				margin-top: 2px;
+			}
+		}
+	}
+
+	.info {
+		font-size: 13px;
+
+		label {
+			width: 100px;
+			display: inline-block;
+		}
+	}
+}
+
+/* endregion */

@@ -1,0 +1,22 @@
+﻿[
+  {
+    "outputFile": "wwwroot/css/site.css",
+    "inputFile": "wwwroot/css/site.less"
+  },
+  {
+    "outputFile": "wwwroot/css/layout.css",
+    "inputFile": "wwwroot/css/layout.less"
+  },
+  {
+    "outputFile": "wwwroot/css/datepicker.css",
+    "inputFile": "wwwroot/css/datepicker.less"
+  },
+  {
+    "outputFile": "wwwroot/css/vcalendar.css",
+    "inputFile": "wwwroot/css/vcalendar.less"
+  },
+  {
+    "outputFile": "wwwroot/css/hcalendar.css",
+    "inputFile": "wwwroot/css/hcalendar.less"
+  }
+]

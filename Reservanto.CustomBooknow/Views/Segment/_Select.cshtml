@@ -1,0 +1,56 @@
+﻿@model BookingViewModel 
+@using Reservanto.CustomBooknow.Localization
+@using Reservanto.CustomBooknow.Code
+
+@Html.DisplayFor(m => m)
+
+<section id="step-segment">
+	@* Vyrenderuji nadpis. *@
+	<div class="step">
+		<h2>@Resources.SegmentSelect</h2>
+	</div>
+
+	@* A seznam všech segmentů. *@
+	<div id="selector" class="without-left-menu ">
+		<div class="right-menu">
+			@* Pro všechny dostupné zaměření. *@
+			@foreach (var segment in Model.Segments)
+			{
+				@* Vyrenderuji prvek pro vybrání. *@
+				<div class="item segment selectable @(segment.Id == Model.SegmentId ? "selected" : "")" onclick="setSegment(@segment.Id, '@segment.SegmentType', this)">
+					<h3>@segment.Name</h3>
+				</div>
+			}
+		</div>
+	</div>
+</section>
+
+
+<script type="text/javascript">
+	CustomBooking.Config.nextPageUse = @Json.Serialize(Model.HasNextPage);
+	CustomBooking.Config.prevPageUse = @Json.Serialize(Model.HasPrevPage);
+	CustomBooking.Config.nextPage = "@Model.NextPage.Value.GetPageUrl(Model.SegmentType, Url)";
+	CustomBooking.Config.nextPageText = "@Resources.NextPage";
+
+	function setSegment(id, type, element) {
+		@* Zvýrazním vybraný. *@
+		$(".segment").removeClass("selected");
+		$(element).addClass("selected");
+
+		@* Nahraji do formuláře. *@
+		CustomBooking.Core.setFormValue("SegmentId", id);
+		CustomBooking.Core.setFormValue("SegmentType", type);
+
+		$.ajax({
+			url: "@Url.Action("GetNextPageUrl", "Modal")",
+			data: {
+				currentPage: "@Model.CurrentPage",
+				segmentType: type
+			},
+			success: function (data) {
+				CustomBooking.Config.nextPage = data.url;
+				CustomBooking.Core.setFormValue("NextPage", data.nextPage);
+			}
+		})
+	}
+</script>

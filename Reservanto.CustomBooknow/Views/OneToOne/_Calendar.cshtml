@@ -1,0 +1,67 @@
+﻿@model BookingViewModel
+@using Reservanto.CustomBooknow.Localization
+@using Reservanto.CustomBooknow.Code
+
+@Html.DisplayFor(m => m)
+
+<script type="text/javascript" src="~/lib/jquery-ui/jquery-ui-1.11.4.min.js"></script>
+<script type="text/javascript" src="~/lib/jquery-ui/jquery.datepicker.locale.js"></script>
+<script type="text/javascript" src="~/js/simpleWeekPicker.js"></script>
+<link rel="stylesheet" href="~/lib/jquery-ui/css/base/all.css" />
+<link rel="stylesheet" href="~/css/datepicker.min.css" />
+<link rel="stylesheet" href="~/css/vcalendar.css" />
+
+<section id="onetoone-step-calendar">
+	<div class="step">
+		<h2>@Resources.ChooseDate</h2>
+		<div id="calendar-left">
+			<div class="load" onclick="simpleWeekPicker.prevWeek()">&nbsp;</div>
+		</div>
+		<div class="calendar-change">
+			<button onclick="$('.week-picker').toggle()">@Resources.Calendar</button>
+			<div style="display:none" class="week-picker"></div>
+		</div>
+		<div id="calendar-right">
+			<div class="load" onclick="simpleWeekPicker.nextWeek()">&nbsp;</div>
+		</div>
+	</div>
+	<div id="selector">
+		<div class="calendar-main fill">
+		</div>
+	</div>
+</section>
+
+<script type="text/javascript">
+	CustomBooking.Config.nextPageUse = @Json.Serialize(Model.HasNextPage);
+	CustomBooking.Config.prevPageUse = @Json.Serialize(Model.HasPrevPage);
+	CustomBooking.Config.nextPage = "@Model.NextPage.GetPageUrl(Model.SegmentType, Url)";
+	CustomBooking.Config.prevPage = "@Model.PrevPage.GetPageUrl(Model.SegmentType, Url)";
+	CustomBooking.Config.nextPageText = "@Resources.NextPage";
+	CustomBooking.Config.prevPageText = "@Resources.PrevPage";
+
+	var loadCalendar = function (date) {
+		var $calendar = $(".calendar-main");
+
+		$.ajax({
+			url: "@Url.Action("GetCalendarForWeek", "OneToOne")",
+			data: {
+				day: +date / 1000,
+				bookingResourceId: CustomBooking.Core.getFormValue("BookingResourceId"),
+				bookingServiceId: CustomBooking.Core.getFormValue("BookingServiceId"),
+				bookingServiceLength: CustomBooking.Core.getFormValue("BookingServiceLength")
+			},
+			beforeSend: function() {
+				$calendar.empty().addClass("loading center");
+			},
+			success: function (data) {
+				$calendar.removeClass("loading center");
+				$calendar.html(data).fadeIn();
+			},
+			error: function() {
+				$calendar.removeClass("loading center");
+			}
+		});
+	}
+
+	var simpleWeekPicker = new simpleWeekPicker($(".week-picker"), loadCalendar);
+</script>

@@ -1,0 +1,60 @@
+﻿@model CalendarViewModel
+
+@{
+	// Get upper bounds for the array.
+	int bound0 = Model.Cells.GetUpperBound(0);
+	int bound1 = Model.Cells.GetUpperBound(1);
+}
+
+<div id="vcalendar">
+	<table cellspacing="0">
+		<thead>
+			<tr class="calendar-normal-header-row">
+				@for (var i = 0; i <= bound1; i++)
+				{
+					<th>
+						@Model.Monday.AddDays(i).ToString("dddd")<br />
+						@Model.Monday.AddDays(i).ToString("d.M.")
+					</th>
+				}
+			</tr>
+		</thead>
+		<tbody>
+			@for (int i = 0; i <= bound0; i++)
+			{
+				<tr>
+					@for (int j = 0; j <= bound1; j++)
+					{
+						var cell = Model.Cells[i, j];
+
+						if (!cell.IsAvailable)
+						{
+							<td class="empty">&nbsp;</td>
+						}
+						else if (cell.IsBooked)
+						{
+							<td class="empty booked" title="Rezervováno">&nbsp;</td>
+						}
+						else
+						{
+							<td class="clickable" data-time="@cell.Time"><span class="time">@cell.Time.ToString("HH:mm")</span></td>
+						}
+					}
+				</tr>
+			}
+		</tbody>
+	</table>
+</div>
+
+<script type="text/javascript">
+	$("td[data-time='" + CustomBooking.Core.getFormValue("BookingTime") + "']").addClass("selected");
+
+	$(".clickable").click(function () {
+		$this = $(this);
+
+		$(".selected").removeClass("selected");
+		$this.addClass("selected");
+
+		CustomBooking.Core.setFormValue("BookingTime", $this.attr("data-time"));
+	});
+</script>

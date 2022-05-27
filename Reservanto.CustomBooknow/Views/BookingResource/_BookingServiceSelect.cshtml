@@ -1,0 +1,71 @@
+﻿@model BookingViewModel
+@using Reservanto.CustomBooknow.Localization
+@using Reservanto.CustomBooknow.Code
+
+@Html.DisplayFor(m => m)
+
+<section id="onetoone-step-service">
+	<div class="step">
+		<h2>@Resources.ChooseService</h2>
+	</div>
+
+	<div id="selector" class="rollable-left-menu">
+		<div class="left-menu rolled-down">
+			<ul>
+				@foreach (var resourceGroup in Model.BookingResources)
+				{
+					<li class="location">@resourceGroup.Key.Name</li>
+
+					<li>
+						<ul>
+							@foreach (var resource in resourceGroup.Value)
+							{
+								var selected = Model.BookingResourceId == resource.Id;
+
+								<li class="resource @(selected ? "selected" : "")" onclick="setResource(@resource.Id, this, @resource.Location.Id)">
+									<span class="resource-name">@resource.Name</span>
+								</li>
+							}
+
+						</ul>
+					</li>
+				}
+			</ul>
+		</div>
+
+		<div class="right-menu">
+			@await Html.PartialAsync("~/Views/BookingService/_Select.cshtml", Model)
+		</div>
+	</div>
+</section>
+
+<script type="text/javascript">
+	CustomBooking.Config.nextPageUse = @Json.Serialize(Model.HasNextPage);
+	CustomBooking.Config.prevPageUse = @Json.Serialize(Model.HasPrevPage);
+	CustomBooking.Config.nextPage = "@Model.NextPage.GetPageUrl(Model.SegmentType, Url)";
+	CustomBooking.Config.prevPage = "@Model.PrevPage.GetPageUrl(Model.SegmentType, Url)";
+	CustomBooking.Config.nextPageText = "@Resources.NextPage";
+	CustomBooking.Config.prevPageText = "@Resources.PrevPage";
+
+	function setResource(id, elem, locationId) {
+		@* Zvýrazním vybraný. *@
+		if (elem != null) {
+			$(".resource").removeClass("selected");
+			$(elem).addClass("selected");
+		}
+
+		@* Upravím hodnotu formuláře. *@
+		CustomBooking.Core.setFormValue("BookingResourceId", id);
+		CustomBooking.Core.setFormValue("LocationId", locationId);
+		CustomBooking.Core.setFormValue("BookingServiceId", 0);
+
+		@* Načtu služby pro nový zdroj. *@
+		$.ajax({
+			url: "@Url.Action("Select", "BookingService")",
+			type: "POST",
+			data: CustomBooking.Core.getSerializedForm()
+		}).done(function (data) {
+			$(".right-menu").html(data);
+		});
+	}
+</script>

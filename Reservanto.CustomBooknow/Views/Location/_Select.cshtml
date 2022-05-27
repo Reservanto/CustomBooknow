@@ -1,0 +1,45 @@
+﻿@model BookingViewModel
+@using Reservanto.CustomBooknow.Localization
+@using Reservanto.CustomBooknow.Code
+
+@Html.DisplayFor(m => m)
+
+<section id="step-segment">
+	@* Vyrenderuji nadpis. *@
+	<div class="step">
+		<h2>@Resources.LocationSelect</h2>
+	</div>
+
+	@* A seznam všech segmentů. *@
+	<div id="selector" class="without-left-menu ">
+		<div class="right-menu">
+			@* Pro všechny dostupné zaměření. *@
+			@foreach (var location in Model.Locations)
+			{
+				@* Vyrenderuji prvek pro vybrání. *@
+				<div class="item location selectable @(location.Id == Model.LocationId ? "selected" : "")" onclick="setLocation(@location.Id, this)">
+					<h3>@location.Name</h3>
+				</div>
+			}
+		</div>
+	</div>
+</section>
+
+
+<script type="text/javascript">
+	CustomBooking.Config.nextPageUse = @Json.Serialize(Model.HasNextPage);
+	CustomBooking.Config.prevPageUse = @Json.Serialize(Model.HasPrevPage);
+	CustomBooking.Config.nextPage = "@Model.NextPage.GetPageUrl(Model.SegmentType, Url)";
+	CustomBooking.Config.prevPage = "@Model.PrevPage.GetPageUrl(Model.SegmentType, Url)";
+	CustomBooking.Config.nextPageText = "@Resources.NextPage";
+	CustomBooking.Config.prevPageText = "@Resources.PrevPage";
+
+	function setLocation(id, element) {
+		@* Zvýrazním vybraný. *@
+		$(".location").removeClass("selected");
+		$(element).addClass("selected");
+
+		@* Nahraji do formuláře. *@
+		CustomBooking.Core.setFormValue("LocationId", id);
+	}
+</script>
