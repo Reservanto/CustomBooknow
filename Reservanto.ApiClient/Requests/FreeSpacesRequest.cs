@@ -10,7 +10,7 @@ namespace Reservanto.ApiClient.Requests
 		/// <summary>
 		/// Vytvoří nový dotaz pro získání všech rezervovatelných termínů pro kombinaci zdroj/služba.
 		/// </summary>
-		/// <param name="bookingResourceId">Požadovaný zdoj, pro který se stahují termíny.</param>
+		/// <param name="bookingResourceId">Požadovaný zdroj, pro který se stahují termíny.</param>
 		/// <param name="bookingServiceId">Požadovaná služba, pro který se stahují termíny.</param>
 		public FreeSpacesRequest(int bookingResourceId, int bookingServiceId, DateTime from, DateTime to)
 			: base(from, to)

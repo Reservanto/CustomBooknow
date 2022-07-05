@@ -3,7 +3,7 @@
 	/// <summary>
 	/// Požadavek, pro vytvoření platby na danou rezervaci. 
 	/// </summary>
-	class CreatePaymentRequest : AppointmentRequest
+	internal class CreatePaymentRequest : AppointmentRequest
 	{
 		/// <summary>
 		/// Vytvoří nový dotaz, pro vytvoření platby za rezervaci.
@@ -19,7 +19,7 @@
 
 		/// <summary>
 		/// Vrací nebo nastavuje id zákazníka.
-		/// Spolu s <see cref="AppointmentId"/> tvoří samotnou rezervaci.
+		/// Spolu s <see cref="AppointmentRequest.AppointmentId"/> tvoří samotnou rezervaci.
 		/// </summary>
 		public int CustomerId
 		{

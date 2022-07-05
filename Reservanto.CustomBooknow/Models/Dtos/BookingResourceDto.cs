@@ -28,7 +28,7 @@ namespace Reservanto.CustomBooknow.Models.Dtos
 		}
 
 		/// <summary>
-		/// Vrací nebo nastavuje v jaké provozovně tento zdroj pravuje.
+		/// Vrací nebo nastavuje v jaké provozovně tento zdroj pracuje.
 		/// </summary>
 		public LocationDto Location
 		{

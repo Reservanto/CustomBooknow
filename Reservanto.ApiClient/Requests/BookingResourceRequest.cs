@@ -8,10 +8,10 @@
 		/// <summary>
 		/// Vytvoří nový dotaz, omezený na konkrétní zdroj.
 		/// </summary>
-		/// <param name="bookingReosurceId">Id zdroje, který se má získat.</param>
-		public BookingResourceRequest(int bookingReosurceId)
+		/// <param name="bookingResourceId">Id zdroje, který se má získat.</param>
+		public BookingResourceRequest(int bookingResourceId)
 		{
-			this.BookingResourceId = bookingReosurceId;
+			this.BookingResourceId = bookingResourceId;
 		}
 
 		/// <summary>

@@ -33,7 +33,7 @@ namespace Reservanto.ApiClient
 		}
 
 		/// <summary>
-		/// Zparsuje příchozí callback z API reservanto.
+		/// Zparsuje příchozí callback z API Reservanta.
 		/// </summary>
 		/// <param name="queryString">Typicky např.: Request.QueryString</param>
 		/// <param name="ltt">V případě, že uživatel žádost potvrdil, vrací Long time token.</param>

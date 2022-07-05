@@ -4,7 +4,7 @@ using System.Collections.Generic;
 namespace Reservanto.ApiClient.Responses
 {
 	/// <summary>
-	/// Odpověď např. na dotaz pro vyhledávání v zákazních, obsahující kolekci zákazníků.
+	/// Odpověď např. na dotaz pro vyhledávání v zákaznících, obsahující kolekci zákazníků.
 	/// </summary>
 	internal class CustomerListResponse : Response
 	{

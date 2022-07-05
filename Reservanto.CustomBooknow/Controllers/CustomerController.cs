@@ -18,7 +18,7 @@ namespace Reservanto.CustomBooknow.Controllers
 		{
 			// Nevybral jsem žádnou službu -> chyba.
 			if (!model.IsAppointmentOrTimeSelected)
-				return BadRequest(Resources.AppointmentMustBeSelected); // Mohu vrátit 400 - formulář to zobrazí jako vylidační hlášku.
+				return BadRequest(Resources.AppointmentMustBeSelected); // Mohu vrátit 400 - formulář to zobrazí jako validační hlášku.
 
 			// Zjistím další stránku.
 			model.NextPage = WebPageSelector.GetNextPage(model.CurrentPage, model.SegmentType);

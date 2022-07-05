@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Reservanto.CustomBooknow.Code.ReservantoApiClient;
 using System.Web;
+using Microsoft.Extensions.Options;
 
 namespace Reservanto.CustomBooknow.Controllers
 {
@@ -9,12 +10,25 @@ namespace Reservanto.CustomBooknow.Controllers
 	/// </summary>
 	public class ApiController : BaseController
 	{
-		public ApiController(ReservantoApiConnector reservantoApi) : base(reservantoApi)
+		private readonly ReservantoApiConfiguration configuration;
+
+		public ApiController(ReservantoApiConnector reservantoApi, IOptions<ReservantoApiConfiguration> configuration)
+			: base(reservantoApi)
 		{
+			this.configuration = configuration.Value;
 		}
 
 		/// <summary>
-		/// Vratí na přesměrování autorizace vůči reservantímu api.
+		/// Vrací stránku s návodem, jak aplikaci propojit s API.
+		/// </summary>
+		/// <returns></returns>
+		public IActionResult ConnectToAPI()
+		{
+			return View(this.configuration);
+		}
+
+		/// <summary>
+		/// Vrací přesměrování na autorizaci vůči reservantímu api.
 		/// </summary>
 		public IActionResult Redirect()
 		{
@@ -23,6 +37,9 @@ namespace Reservanto.CustomBooknow.Controllers
 			return Redirect(ReservantoApi.CreateRedirectUrl(redirectUrl));
 		}
 
+		/// <summary>
+		/// Vrací výsledek autorizace vůči reservantímu api.
+		/// </summary>
 		public IActionResult Callback()
 		{
 			// Přečtu odpověď.

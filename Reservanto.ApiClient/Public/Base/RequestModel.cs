@@ -6,7 +6,7 @@
 	public interface IRequestModel { }
 
 	/// <summary>
-	/// Bázový model pro modely implementující rozhranní <see cref="IRequestModel"/>.
+	/// Bázový model pro modely implementující rozhraní <see cref="IRequestModel"/>.
 	/// </summary>
 	public abstract class RequestModel : IRequestModel
 	{

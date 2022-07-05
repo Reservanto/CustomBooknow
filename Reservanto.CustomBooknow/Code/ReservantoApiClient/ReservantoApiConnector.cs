@@ -44,7 +44,6 @@ namespace Reservanto.CustomBooknow.Code.ReservantoApiClient
 		/// <summary>
 		/// Konstruktor pouze z modelu.
 		/// </summary>
-		/// <param name="model"></param>
 		public ReservantoApiConnector(IOptions<ReservantoApiConfiguration> configuration)
 		{
 			this.configuration = configuration;
@@ -82,7 +81,7 @@ namespace Reservanto.CustomBooknow.Code.ReservantoApiClient
 		private void EnsureLTTOrThrow()
 		{
 			if (string.IsNullOrEmpty(this.configuration.Value.LongTimeToken))
-				throw new Exception("Invalid LTT, you can refresh LTT on /Api/Redirect");
+				throw new InvalidLongTimeTokenException();
 		}
 
 		#region Dotazy na API
@@ -155,7 +154,7 @@ namespace Reservanto.CustomBooknow.Code.ReservantoApiClient
 		/// Vrací seznam všech služeb, které poskytuje daný zdroj v daném zaměření.
 		/// </summary>
 		/// <param name="bookingResourceId">Zdroj, jehož služby je potřeba získat.</param>
-		/// <param name="currentSegmentId">Zameření, ve kterém jsou služby.</param>
+		/// <param name="currentSegmentId">Zaměření, ve kterém jsou služby.</param>
 		/// <returns>Seznam všech služeb, které daný zdroj poskytuje v daném zaměření.</returns>
 		public ICollection<BookingServiceDto> GetBookingServicesForResource(int bookingResourceId, int currentSegmentId)
 		{
@@ -209,7 +208,7 @@ namespace Reservanto.CustomBooknow.Code.ReservantoApiClient
 		}
 
 		/// <summary>
-		/// Vytváří rezervaci pro daného zákazníka v zameření typu OneToOne.
+		/// Vytváří rezervaci pro daného zákazníka v zaměření typu OneToOne.
 		/// </summary>
 		/// <param name="booking">Rozhraní, nesoucí informace o vytvářené rezervaci.</param>
 		/// <returns>Vrací identifikátory a status nově vytvořené rezervace.</returns>
@@ -221,7 +220,7 @@ namespace Reservanto.CustomBooknow.Code.ReservantoApiClient
 		}
 
 		/// <summary>
-		/// Vytváří rezervaci pro daného zákazníka v zameření typu Classes.
+		/// Vytváří rezervaci pro daného zákazníka v zaměření typu Classes.
 		/// </summary>
 		/// <param name="booking">Rozhraní, nesoucí informace o vytvářené rezervaci.</param>
 		/// <returns>Vrací identifikátory a status nově vytvořené rezervace.</returns>
@@ -298,7 +297,7 @@ namespace Reservanto.CustomBooknow.Code.ReservantoApiClient
 		}
 
 		/// <summary>
-		/// Vrací všechy rezervovatelné události pro zaměření typu Classes.
+		/// Vrací všechny rezervovatelné události pro zaměření typu Classes.
 		/// </summary>
 		/// <param name="segmentId">Id zaměření.</param>
 		/// <param name="locationId">Id provozovny.</param>

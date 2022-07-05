@@ -190,7 +190,7 @@ namespace Reservanto.ApiClient.Core
 		/// Provede dotaz na API.
 		/// </summary>
 		/// <typeparam name="T">Návratový typ dotazu na API, musí dědit z <see cref="Request"/>.</typeparam>
-		/// <param name="request">Tělo (paramentry) požadavku.</param>
+		/// <param name="request">Tělo (parametry) požadavku.</param>
 		/// <param name="path">Akce, na kterou se dotaz provádí např. "Event/Get".</param>
 		/// <returns>Odpověď API.</returns>
 		internal T MakeRequest<T>(string path, Request request) where T : Response
@@ -297,7 +297,7 @@ namespace Reservanto.ApiClient.Core
 		/// Provede dotaz na API.
 		/// </summary>
 		/// <param name="path">Akce, na kterou se dotaz provádí např. "Event/Get".</param>
-		/// <param name="request">Tělo (paramentry) požadavku.</param>
+		/// <param name="request">Tělo (parametry) požadavku.</param>
 		/// <returns>Vrací survou odpověď serveru,</returns>
 		private HttpResponseMessage MakeRequestRaw(string path, Request request)
 		{
@@ -338,7 +338,7 @@ namespace Reservanto.ApiClient.Core
 		/// Pomocná metoda pro čtení výsledku dotazu na API.
 		/// </summary>
 		/// <param name="message">Surová odpověď serveru.</param>
-		/// <returns>Odpověd serveru, převedená na string (JSON).</returns>
+		/// <returns>Odpověď serveru, převedená na string (JSON).</returns>
 		private static string ReadContent(HttpResponseMessage message)
 		{
 			var task = message.Content.ReadAsStringAsync();

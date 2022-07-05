@@ -181,6 +181,30 @@
   <data name="SegmentSelect" xml:space="preserve">
     <value>Vyberte, kam se chcete rezervovat</value>
   </data>
+  <data name="Settings" xml:space="preserve">
+    <value>Nastavení</value>
+  </data>
+  <data name="Settings_ApiUrl" xml:space="preserve">
+    <value>Komunikační adresa</value>
+  </data>
+  <data name="Settings_ClientId" xml:space="preserve">
+    <value>Id klienta</value>
+  </data>
+  <data name="Settings_ClientIdHelp" xml:space="preserve">
+    <value>Pro získání kontaktujte prosím podporu systému Reservanto</value>
+  </data>
+  <data name="Settings_Connect" xml:space="preserve">
+    <value>Propojit!</value>
+  </data>
+  <data name="Settings_Connection" xml:space="preserve">
+    <value>Nastavení komunikace s API</value>
+  </data>
+  <data name="Settings_LTT" xml:space="preserve">
+    <value>Komunikační token</value>
+  </data>
+  <data name="Settings_Rights" xml:space="preserve">
+    <value>Oprávnení</value>
+  </data>
   <data name="Title" xml:space="preserve">
     <value>Online rezervace</value>
   </data>

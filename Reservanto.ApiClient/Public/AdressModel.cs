@@ -15,7 +15,7 @@
 		}
 
 		/// <summary>
-		/// vrací nebo nastasvuje ulici.
+		/// vrací nebo nastavuje ulici.
 		/// </summary>
 		public string Street
 		{
@@ -33,7 +33,7 @@
 		}
 
 		/// <summary>
-		/// Vrací nebo nastasvuje PSČ.
+		/// Vrací nebo nastavuje PSČ.
 		/// </summary>
 		public string ZipCode
 		{

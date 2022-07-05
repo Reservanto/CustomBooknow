@@ -17,7 +17,7 @@ namespace Reservanto.CustomBooknow.Controllers
 		/// <summary>
 		/// Akce sloužící pro výběr zaměření.
 		/// </summary>
-		/// <param name="model">Model, obsahující formulářové hodonty.</param>
+		/// <param name="model">Model, obsahující formulářové hodnoty.</param>
 		public IActionResult Select(BookingViewModel model)
 		{
 			// Stáhnu segmenty pro výběr.

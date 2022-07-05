@@ -1,0 +1,62 @@
+﻿@using Reservanto.CustomBooknow.Localization
+@model Reservanto.CustomBooknow.Code.ReservantoApiClient.ReservantoApiConfiguration
+
+@{
+	ViewBag.Title = Resources.Settings;
+}
+
+<section>
+	<div class="step">
+		<h2>@Resources.Settings_Connection</h2>
+	</div>
+	<div id="selector">
+		<div class="settings-column">
+			<div class="row">
+				<label class="fakeinput" for="ClientId">@Resources.Settings_ClientId</label>
+				<div class="input">
+					<input readonly
+							type="text"
+							value="@Model.ClientId"
+							id="ClientId" />
+				</div>
+			</div>
+			<div class="row">
+				<label class="fakeinput" for="ApiUrl">@Resources.Settings_ApiUrl</label>
+				<div class="input">
+					<input readonly
+							type="text"
+							value="@Model.ApiUrl"
+							id="ApiUrl" />
+				</div>
+			</div>
+			<div class="row">
+				<label class="fakeinput" for="RequestedRights">@Resources.Settings_Rights</label>
+				<div class="input">
+					<input readonly
+							type="text"
+							value="@string.Join(", ", Model.RequestedRights)"
+							id="RequestedRights" />
+				</div>
+			</div>
+			<div class="row">
+				<label class="fakeinput" for="LongTimeToken">@Resources.Settings_LTT</label>
+				<div class="input">
+					<input readonly
+							type="text"
+							value="@Model.LongTimeToken"
+							id="LongTimeToken" />
+				</div>
+			</div>
+			<div class="row">
+				<a href="@Url.Action("Redirect", "Api")" id="connect">@Resources.Settings_Connect</a>
+			</div>
+		</div>
+	</div>
+</section>
+
+
+<script>
+	$(document).ready(function() {
+		$("#loader").removeClass("loading");
+	})
+</script>

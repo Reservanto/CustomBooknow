@@ -14,7 +14,7 @@
 		}
 
 		/// <summary>
-		/// Vrací přijmení zákazníka.
+		/// Vrací příjmení zákazníka.
 		/// </summary>
 		string LastName
 		{

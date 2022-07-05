@@ -16,7 +16,7 @@ namespace Reservanto.ApiClient.Requests
 		{
 			var now = DateTime.UtcNow;
 			var old = new DateTime(1980, 1, 1);
-			TimeStamp = (int)(now - old).TotalSeconds;
+			this.TimeStamp = (int)(now - old).TotalSeconds;
 		}
 
 		/// <summary>

@@ -12,7 +12,7 @@ namespace Reservanto.CustomBooknow.Models.Dtos
 		/// <summary>
 		/// Vytvoří nový datový model, reprezentující pracovní hodiny.
 		/// </summary>
-		/// <param name="segment">Model z API reprezentující pracovní hodiny.</param>
+		/// <param name="workingHoursApiModel">Model z API reprezentující pracovní hodiny.</param>
 		public WorkingHourDto(WorkingHoursModel workingHoursApiModel)
 		{
 			this.Day = workingHoursApiModel.DayOfWeek;

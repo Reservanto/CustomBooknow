@@ -1,7 +1,7 @@
 ﻿namespace Reservanto.CustomBooknow.Models
 {
 	/// <summary>
-	/// Třída, nesoucí všechny vstupní paramterty pro rezervační formulář.
+	/// Třída, nesoucí všechny vstupní parametry pro rezervační formulář.
 	/// </summary>
 	public class ModalArguments
 	{

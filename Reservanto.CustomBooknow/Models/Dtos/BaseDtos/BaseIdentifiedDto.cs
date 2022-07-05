@@ -3,12 +3,12 @@
 namespace Reservanto.CustomBooknow.Models.Dtos
 {
 	/// <summary>
-	/// Základní datový objekt, pro jakýkoliv objekt, potřebojící svůj identifikátor.
+	/// Základní datový objekt, pro jakýkoliv objekt, potřebující svůj identifikátor.
 	/// </summary>
 	public class BaseIdentifiedDto
 	{
 		/// <summary>
-		/// Vytvoří zákadní datový objekt (<c><see cref="Id"/> = 0</c>).
+		/// Vytvoří základní datový objekt (<c><see cref="Id"/> = 0</c>).
 		/// </summary>
 		public BaseIdentifiedDto()
 		{

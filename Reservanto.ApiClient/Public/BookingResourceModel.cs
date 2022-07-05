@@ -53,7 +53,7 @@ namespace Reservanto.ApiClient.Public
 		}
 
 		/// <summary>
-		/// Vrací nebo nastasvuje popisek zdroje.
+		/// Vrací nebo nastavuje popisek zdroje.
 		/// </summary>
 		public string Description
 		{
@@ -72,7 +72,7 @@ namespace Reservanto.ApiClient.Public
 		}
 
 		/// <summary>
-		/// Vrací nebo nastsavuje adresu k obrázku tohoto zdroje.
+		/// Vrací nebo nastavuje adresu k obrázku tohoto zdroje.
 		/// </summary>
 		public string ImageUrl
 		{

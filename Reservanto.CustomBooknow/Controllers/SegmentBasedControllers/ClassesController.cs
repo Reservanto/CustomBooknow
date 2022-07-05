@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Reservanto.CustomBooknow.Code;
-using Reservanto.CustomBooknow.Code.Enums;
 using Reservanto.CustomBooknow.Code.ReservantoApiClient;
 using Reservanto.CustomBooknow.Models;
 using System;
@@ -17,9 +16,9 @@ namespace Reservanto.CustomBooknow.Controllers
 		}
 
 		/// <summary>
-		/// Vrací kalendář pro věběr termínu - vybírá se již existující lekce.
+		/// Vrací kalendář pro výběr termínu - vybírá se již existující lekce.
 		/// </summary>
-		/// <param name="model">Model, obsahující formulářové hodonty.</param>
+		/// <param name="model">Model, obsahující formulářové hodnoty.</param>
 		public IActionResult Calendar(BookingViewModel model)
 		{
 			// Získám si další stránku.
@@ -30,7 +29,7 @@ namespace Reservanto.CustomBooknow.Controllers
 		}
 
 		/// <summary>
-		/// Vrací samotný kalendář, již pro da¨nou provozovnu.
+		/// Vrací samotný kalendář, již pro danou provozovnu.
 		/// </summary>
 		/// <param name="day">Jakýkoliv den z týdnu, který chci zobrazit.</param>
 		/// <param name="segmentId">Identifikátor zaměření, pro které vytvářím kalendář.</param>
@@ -58,7 +57,7 @@ namespace Reservanto.CustomBooknow.Controllers
 		/// <summary>
 		/// Samotné vytvoření rezervace - poslední akce.
 		/// </summary>
-		/// <param name="model">Model, obsahující formulářové hodonty, na základě kterých se vytvoří rezervace.</param>
+		/// <param name="model">Model, obsahující formulářové hodnoty, na základě kterých se vytvoří rezervace.</param>
 		public IActionResult Finish(BookingViewModel model) 
 		{
 			// Další stránka už není.

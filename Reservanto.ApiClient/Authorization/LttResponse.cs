@@ -3,7 +3,7 @@
 namespace Reservanto.ApiClient.Authorization
 {
 	/// <summary>
-	/// Odpověď API na požadavek o zíkání Long Time Tokenu.
+	/// Odpověď API na požadavek o získání Long Time Tokenu.
 	/// </summary>
 	internal class LttResponse : Response
 	{

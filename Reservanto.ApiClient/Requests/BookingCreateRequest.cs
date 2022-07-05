@@ -67,7 +67,7 @@ namespace Reservanto.ApiClient.Requests
 		}
 
 		/// <summary>
-		/// Vrací nebo nastavuje kód oucheru, který je použit pro uhrazení rezervace.
+		/// Vrací nebo nastavuje kód voucheru, který je použit pro uhrazení rezervace.
 		/// </summary>
 		public string Voucher
 		{

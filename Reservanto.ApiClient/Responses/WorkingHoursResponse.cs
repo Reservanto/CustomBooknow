@@ -3,12 +3,12 @@
 namespace Reservanto.ApiClient.Responses
 {
 	/// <summary>
-	/// Odpověď na požadavek na získání konkrtéhních pracovních hodin.
+	/// Odpověď na požadavek na získání konkrétních pracovních hodin.
 	/// </summary>
 	internal class WorkingHoursResponse : ListResponse<WorkingHoursModel>
 	{
 		/// <summary>
-		/// Vrací nebo nastavuje zdroj, pro který byly váceny pracovní hodiny.
+		/// Vrací nebo nastavuje zdroj, pro který byly vráceny pracovní hodiny.
 		/// </summary>
 		public int? BookingResourceId
 		{

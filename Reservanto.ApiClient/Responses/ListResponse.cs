@@ -4,7 +4,7 @@ using Reservanto.ApiClient.Public;
 namespace Reservanto.ApiClient.Responses
 {
 	/// <summary>
-	/// Odpověď API pro zkískání seznamu objektů (např. seznam segmentů).
+	/// Odpověď API pro získání seznamu objektů (např. seznam segmentů).
 	/// </summary>
 	internal class ListResponse<T> : Response where T : IResponseResult
 	{

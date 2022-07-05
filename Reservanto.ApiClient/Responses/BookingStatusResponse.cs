@@ -1,7 +1,7 @@
 ﻿namespace Reservanto.ApiClient.Responses
 {
 	/// <summary>
-	/// Odpověd API na požadavek o vytvoření rezervace.
+	/// Odpověď API na požadavek o vytvoření rezervace.
 	/// </summary>
 	public class BookingStatusResponse : Response
 	{

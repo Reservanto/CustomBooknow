@@ -3,7 +3,7 @@
 namespace Reservanto.ApiClient.Public.Interface
 {
 	/// <summary>
-	/// Interface rezprezentující rezervaci.
+	/// Interface reprezentující rezervaci.
 	/// </summary>
 	public interface IBooking
 	{
@@ -24,7 +24,7 @@ namespace Reservanto.ApiClient.Public.Interface
 		}
 
 		/// <summary>
-		/// Vrací kód oucheru, který je použit pro uhrazení rezervace.
+		/// Vrací kód voucheru, který je použit pro uhrazení rezervace.
 		/// </summary>
 		string Voucher
 		{

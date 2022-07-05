@@ -3,7 +3,7 @@
 namespace Reservanto.ApiClient.Authorization
 {
 	/// <summary>
-	/// Odpověď API na požadavek o zíkání Short Time Tokenu.
+	/// Odpověď API na požadavek o získání Short Time Tokenu.
 	/// </summary>
 	internal class SttResponse : Response
 	{

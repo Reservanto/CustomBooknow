@@ -16,7 +16,7 @@ namespace Reservanto.CustomBooknow.Controllers
 		/// <summary>
 		/// Vrací všechny služby, který poskytuje daný zdroj.
 		/// </summary>
-		/// <param name="resourceId">Id zdroje, jehož služby chci.</param>
+		/// <param name="model">Model formuláře.</param>
 		[HttpPost]
 		public IActionResult Select(BookingViewModel model)
 		{

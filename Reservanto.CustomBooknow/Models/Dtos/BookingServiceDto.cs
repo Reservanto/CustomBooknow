@@ -3,7 +3,7 @@
 namespace Reservanto.CustomBooknow.Models.Dtos
 {
 	/// <summary>
-	/// Datový objekt, nesoucí informace o rezervané službě.
+	/// Datový objekt, nesoucí informace o rezervované službě.
 	/// </summary>
 	public class BookingServiceDto : BaseIdentifiedDto
 	{
@@ -29,7 +29,7 @@ namespace Reservanto.CustomBooknow.Models.Dtos
 		}
 
 		/// <summary>
-		/// Vrací nebo nastavuje popisek rezervané služby.
+		/// Vrací nebo nastavuje popisek rezervované služby.
 		/// </summary>
 		public string Description
 		{

@@ -15,7 +15,7 @@ namespace Reservanto.CustomBooknow.Models
 		/// Vytvoří novou instanci modelu pro zobrazení kalendáře.
 		/// </summary>
 		/// <param name="slotSize">Velikost (v minutách) jedné buňky v kalendáři.</param>
-		/// <exception cref="ArgumentException">Pokud <paramref name="slotSize"/> je <= 0.</exception>
+		/// <exception cref="ArgumentException">Pokud <paramref name="slotSize"/> je &lt;= 0.</exception>
 		public CalendarViewModel(int slotSize)
 		{
 			if (slotSize <= 0)
@@ -104,7 +104,7 @@ namespace Reservanto.CustomBooknow.Models
 		}
 
 		/// <summary>
-		/// Vrací počet časových buňek, které jsou celkově dostupné pro rozmezí <see cref="DaysStart"/> až <see cref="DaysEnd"/>.
+		/// Vrací počet časových buněk, které jsou celkově dostupné pro rozmezí <see cref="DaysStart"/> až <see cref="DaysEnd"/>.
 		/// </summary>
 		public int DayIntervalCount
 		{

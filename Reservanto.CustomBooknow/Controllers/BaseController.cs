@@ -16,7 +16,7 @@ namespace Reservanto.CustomBooknow.Controllers
 		}
 
 		/// <summary>
-		/// Vrací API klienta pro komunikaci s reservantem.
+		/// Vrací API klienta pro komunikaci s Reservantem.
 		/// </summary>
 		protected ReservantoApiConnector ReservantoApi => this.reservantoApi;
 	}

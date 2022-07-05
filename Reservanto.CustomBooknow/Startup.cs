@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
+using Reservanto.CustomBooknow.Code;
 using Reservanto.CustomBooknow.Code.ReservantoApiClient;
 
 namespace Reservanto.CustomBooknow
@@ -11,7 +11,7 @@ namespace Reservanto.CustomBooknow
 	{
 		public Startup(IConfiguration configuration)
 		{
-			Configuration = configuration;
+			this.Configuration = configuration;
 		}
 
 		public IConfiguration Configuration { get; }
@@ -26,20 +26,19 @@ namespace Reservanto.CustomBooknow
 			services.AddSingleton<ReservantoApiConnector>();
 
 			// Přidání i provázání s konfugurací API.
-			services.Configure<ReservantoApiConfiguration>(Configuration.GetSection("Api"));
+			services.Configure<ReservantoApiConfiguration>(this.Configuration.GetSection("Api"));
+
+			services.AddMvc(config =>
+			{
+				config.Filters.Add(typeof(LongTimeTokenExceptionFilter));
+			});
 		}
 
 		// This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
 		public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
 		{
-			if (env.IsDevelopment())
-			{
-				app.UseDeveloperExceptionPage();
-			}
-			else
-			{
-				app.UseExceptionHandler("/Home/Error");
-			}
+			app.UseDeveloperExceptionPage();
+	
 			app.UseStaticFiles();
 
 			app.UseRouting();

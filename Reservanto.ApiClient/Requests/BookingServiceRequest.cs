@@ -8,7 +8,7 @@
 		/// <summary>
 		/// Vytvoří nový dotaz, omezený na konkrétní službu.
 		/// </summary>
-		/// <param name="bookingServiceId">Služba, ktará se získává.</param>
+		/// <param name="bookingServiceId">Služba, která se získává.</param>
 		public BookingServiceRequest(int bookingServiceId)
 		{
 			this.BookingServiceId = bookingServiceId;

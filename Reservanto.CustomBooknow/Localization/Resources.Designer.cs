@@ -250,6 +250,78 @@ namespace Reservanto.CustomBooknow.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Nastavení.
+        /// </summary>
+        public static string Settings {
+            get {
+                return ResourceManager.GetString("Settings", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Komunikační adresa.
+        /// </summary>
+        public static string Settings_ApiUrl {
+            get {
+                return ResourceManager.GetString("Settings_ApiUrl", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Id klienta.
+        /// </summary>
+        public static string Settings_ClientId {
+            get {
+                return ResourceManager.GetString("Settings_ClientId", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Pro získání kontaktujte prosím podporu systému Reservanto.
+        /// </summary>
+        public static string Settings_ClientIdHelp {
+            get {
+                return ResourceManager.GetString("Settings_ClientIdHelp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Propojit!.
+        /// </summary>
+        public static string Settings_Connect {
+            get {
+                return ResourceManager.GetString("Settings_Connect", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nastavení komunikace s API.
+        /// </summary>
+        public static string Settings_Connection {
+            get {
+                return ResourceManager.GetString("Settings_Connection", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Komunikační token.
+        /// </summary>
+        public static string Settings_LTT {
+            get {
+                return ResourceManager.GetString("Settings_LTT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Oprávnení.
+        /// </summary>
+        public static string Settings_Rights {
+            get {
+                return ResourceManager.GetString("Settings_Rights", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Online rezervace.
         /// </summary>
         public static string Title {

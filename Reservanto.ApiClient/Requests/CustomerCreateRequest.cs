@@ -29,7 +29,7 @@ namespace Reservanto.ApiClient.Requests
 		}
 
 		/// <summary>
-		/// Vrací nebo nastavuje přijmení zákazníka.
+		/// Vrací nebo nastavuje příjmení zákazníka.
 		/// </summary>
 		public string LastName
 		{

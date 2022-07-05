@@ -8,7 +8,7 @@
 		/// <summary>
 		/// Vytvoří nový dotaz, omezený na konkrétní provozovnu.
 		/// </summary>
-		/// <param name="locationId">Provozovna, ktará se získává.</param>
+		/// <param name="locationId">Provozovna, která se získává.</param>
 		public LocationRequest(int locationId)
 		{
 			this.LocationId = locationId;

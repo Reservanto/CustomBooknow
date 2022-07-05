@@ -19,12 +19,12 @@ namespace Reservanto.CustomBooknow.Controllers
 		/// <summary>
 		/// Vrací kalendář pro výběr termínu - vybírá se jakýkoliv volný termín.
 		/// </summary>
-		/// <param name="model">Model, obsahující formulářové hodonty.</param>
+		/// <param name="model">Model, obsahující formulářové hodnoty.</param>
 		public IActionResult Calendar(BookingViewModel model)
 		{
 			// Není vybrána žádná služba -> chyba.
 			if (!model.IsServiceAndResourceSelected)
-				return BadRequest(Resources.BookingResourceAndServiceMustBeSelected); // Vrací se 400 - formulář to zobrazí jako vylidační hlášku.
+				return BadRequest(Resources.BookingResourceAndServiceMustBeSelected); // Vrací se 400 - formulář to zobrazí jako validační hlášku.
 
 			// Zjištění další stránky.
 			model.NextPage = WebPageSelector.GetNextPage(model.CurrentPage, model.SegmentType);

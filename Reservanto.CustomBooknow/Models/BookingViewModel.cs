@@ -24,7 +24,7 @@ namespace Reservanto.CustomBooknow.Models
 		}
 
 		/// <summary>
-		/// Vrací nebo nastavuje typ aměření.
+		/// Vrací nebo nastavuje typ zaměření.
 		/// </summary>
 		public SegmentType SegmentType
 		{
@@ -116,7 +116,7 @@ namespace Reservanto.CustomBooknow.Models
 		}
 
 		/// <summary>
-		/// Vrací nebo nastavuje přijmění zákazníka.
+		/// Vrací nebo nastavuje příjmení zákazníka.
 		/// </summary>
 		public string CustomerLastName
 		{
@@ -158,7 +158,7 @@ namespace Reservanto.CustomBooknow.Models
 		#region Informace o stránkách
 
 		/// <summary>
-		/// Vrací nebo nastavuje předhozí stránku formuláře, pokud je null, znamená to, že předcházející stránka neexistuje.
+		/// Vrací nebo nastavuje předchozí stránku formuláře, pokud je null, znamená to, že předcházející stránka neexistuje.
 		/// </summary>
 		public WebPage? PrevPage
 		{

@@ -1,7 +1,7 @@
 ﻿namespace Reservanto.ApiClient.Responses
 {
 	/// <summary>
-	/// Odpoveď na požadavek typu "echo" (kontrola dostupnosti serveru).
+	/// Odpověď na požadavek typu "echo" (kontrola dostupnosti serveru).
 	/// </summary>
 	internal class EchoResponse : Response
 	{

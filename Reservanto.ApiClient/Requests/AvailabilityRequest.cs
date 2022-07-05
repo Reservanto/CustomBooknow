@@ -8,7 +8,7 @@ namespace Reservanto.ApiClient.Requests
 	internal class AvailabilityRequest : Request
 	{
 		/// <summary>
-		/// Vytvoří nový dotaz, omezený datumy "od", "do". 
+		/// Vytvoří nový dotaz, omezený daty "od", "do". 
 		/// </summary>
 		/// <param name="from">Datum, od kterého se mají stahovat výsledky.</param>
 		/// <param name="to">Datum, do kterého se mají stahovat výsledky.</param>

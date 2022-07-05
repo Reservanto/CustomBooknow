@@ -18,7 +18,7 @@ namespace Reservanto.CustomBooknow.Controllers
 		/// <summary>
 		/// Akce, sloužící pro výběr zdroje a služby.
 		/// </summary>
-		/// <param name="model">Model, obsahující formulářové hodonty.</param>
+		/// <param name="model">Model, obsahující formulářové hodnoty.</param>
 		public IActionResult BookingServiceSelect(BookingViewModel model)
 		{
 			// Mohu připravit výběr zdroje a služby.
@@ -27,7 +27,7 @@ namespace Reservanto.CustomBooknow.Controllers
 			// Naplním model.
 			model.BookingResources = bookingResources
 				.GroupBy(br => br.Location.Id) // Spojím podle id.
-				// A do slovníku si rozřádím tak, že klíčem mám název provozovny a hodnotou všechny zdroje.
+				// A do slovníku si roztřídím tak, že klíčem mám název provozovny a hodnotou všechny zdroje.
 				.ToDictionary(
 					k => k.First().Location,
 					v => v.ToList()

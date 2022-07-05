@@ -275,7 +275,7 @@ namespace Reservanto.ApiClient
 		/// Vyhledá ve všech zákaznících podle předaného modelu.
 		/// Nutná oprávnění: Customer_r
 		/// </summary>
-		/// <returns>Vrací list se zákazníky, kteří se podobají tomu, co bylo vyhedáno (null pokud vznikla chyba v komunikaci).</returns>
+		/// <returns>Vrací list se zákazníky, kteří se podobají tomu, co bylo vyhledáno (null pokud vznikla chyba v komunikaci).</returns>
 		public List<CustomerModel> Customer_Search(ICustomer customer)
 		{
 			var response = Safe(() => MakeRequest<CustomerListResponse>(
@@ -438,7 +438,7 @@ namespace Reservanto.ApiClient
 
 		/// <summary>
 		/// Načte seznam všech segmentů pro přihlášeného obchodníka.
-		/// Nutná oprvánění: Segment_r
+		/// Nutná oprávnění: Segment_r
 		/// </summary>
 		/// <returns>Vrací list se seznamem všech zdrojů (null pokud vznikla chyba v komunikaci)</returns>
 		public List<SegmentModel> Segment_GetList()
@@ -482,7 +482,7 @@ namespace Reservanto.ApiClient
 
 		/// <summary>
 		/// Odešle požadavek typu "echo" (ověření dostupnosti serveru).
-		/// Pokud kominkace v pořádku není, vyhodí příslušnou výjimku.
+		/// Pokud komunikace v pořádku není, vyhodí příslušnou výjimku.
 		/// </summary>
 		/// <param name="text">Text, který se odesílá na server.</param>
 		/// <returns>Text, obdržený od serveru, pokud je komunikace v pořádku je stejný jako <paramref name="text"/>.</returns>

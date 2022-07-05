@@ -5,7 +5,7 @@ using System;
 namespace Reservanto.CustomBooknow.Models.Dtos
 {
 	/// <summary>
-	/// Datový objekt, reprezentující shrnující infroamce o rezervaci.
+	/// Datový objekt, reprezentující shrnující informace o rezervaci.
 	/// </summary>
 	public class BookingSummaryDto
 	{

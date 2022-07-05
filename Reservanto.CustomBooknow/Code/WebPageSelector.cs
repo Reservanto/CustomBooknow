@@ -98,7 +98,7 @@ namespace Reservanto.CustomBooknow.Code
 		}
 
 		/// <summary>
-		/// Vrací url k přesměrování na konkrétní stránku formuláře a plně respekuje i zaměření.
+		/// Vrací url k přesměrování na konkrétní stránku formuláře a plně respektuje i zaměření.
 		/// </summary>
 		/// <param name="currentPage">Stránka formuláře z výčtu <see cref="WebPage"/>.</param>
 		/// <param name="segmentType">Typ zaměření.</param>
@@ -111,7 +111,7 @@ namespace Reservanto.CustomBooknow.Code
 		}
 
 		/// <summary>
-		/// Vrací url k přesměrování na konkrétní stránku formuláře a plně respekuje i zaměření.
+		/// Vrací url k přesměrování na konkrétní stránku formuláře a plně respektuje i zaměření.
 		/// </summary>
 		/// <param name="currentPage">Stránka formuláře z výčtu <see cref="WebPage"/>.</param>
 		/// <param name="segmentType">Typ zaměření.</param>
