@@ -8,7 +8,7 @@
   </PropertyGroup>
 
   <PropertyGroup>
-    <TargetFramework>net5.0</TargetFramework>
+    <TargetFramework>net7.0</TargetFramework>
     <UserSecretsId>6324d461-9628-4e39-b956-b311da11e124</UserSecretsId>
   </PropertyGroup>
 
