@@ -16,7 +16,7 @@
 - Před prvním spuštěním je nutné nejprve správně projekt nakonfigurovat v souboru `appsettings.json`
 - Hodnoty konfigurace jsou následující
     - `ClientId` - Id aplikace API **(nutné vyplnit před první spuštěním)** - způsob získání je popsán v dokumentaci v sekci "Úvod"
-    - `ApiUrl` - Url adresa, na které se nachází API tj. https://merchant.reservanto.cz/api_v1
+    - `ApiUrl` - Url adresa, na které se nachází API tj. https://api.reservanto.cz/v1
     - `RequestedRights` - Požadovaná práva, se kterými bude aplikace přistupovat k API (viz dokumentace, kapitola "Všechna práva")
     - `LongTimeToken` - Přístupový Long Time Token **(LTT)** - hodnota je doplněna při běhu aplikace
     - `ShortTimeToken` - Přístupový Short Time Token **(STT)** - hodnota je doplněna při běhu aplikace
