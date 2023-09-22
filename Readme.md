@@ -1,7 +1,7 @@
 ﻿## Vlastní implementace rezervačního formuláře pomocí Reservanto API
 
 - Ukázka možnosti vytvoření vlastního rezervačního formuláře za pomocí API, které poskytuje rezervační systém [Reservanto](https://www.reservanto.cz)
-- Dokumentaci k API lze nalézt [zde](https://www.reservanto.cz/files/ReservantoAPI.pdf)
+- Dokumentaci k API lze nalézt [zde](https://api.reservanto.cz/Help)
 - Ukázkový kód je rozdělen do dvou částí, ukázky napojení na API **(Reservanto.ApiClient)** a samotný webový projekt **(Reservanto.CustomBooknow)**
 
 ### Reservanto.ApiClient
